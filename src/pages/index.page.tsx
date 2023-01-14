@@ -16,7 +16,6 @@ import {
     OurStoryText,
     MarriageProposalText,
     ConfirmAttendanceContent,
-    CountDownContent,
     NextEventContent,
     MapOfEvent,
     InformationEvent,
@@ -24,11 +23,12 @@ import {
     ConfirmAttendanceInput,
     LabelConfirmAttendance,
     ConfirmAttendanceTitle,
-    ConfirmAttendanceButton,
+    ConfirmAttendanceButton, TipsContent,
 } from '../styles/pages/app'
 import Product from './product/product'
 import Image from 'next/image'
 import {faker} from '@faker-js/faker/locale/pt_BR'
+import CountdownTimer from './components/Counter'
 
 const image = faker.image.people()
 const bigText = 'Repellat accusamus beatae sapiente sint aperiam. At magnam temporibus eos aut incidunt. Explicabo quam labore tempore beatae sapiente maiores. Expedita optio temporibus dolore ratione magni perferendis qui. Accusamus eius maxime beatae tenetur eius. Animi dolore accusantium ad. Sapiente animi vel. Veritatis error est laborum dolorum. Tempora voluptatem cupiditate quam expedita omnis quam temporibus. Corporis exercitationem reiciendis minima quam nihil. Molestias iure ipsam necessitatibus inventore minus. Ducimus earum harum id voluptate. Hic ratione odio assumenda sint alias repellat a. Labore commodi itaque. Beatae perferendis nam libero eum beatae. Dolorem voluptatibus molestias sunt laborum voluptatum nihil tempore doloremque.'
@@ -38,6 +38,7 @@ export default function Home () {
         <Container>
             <Text>Lucas e Ana</Text>
             <ImageContent>
+                <Image src={image} width={1440} height={300} alt={''}/>
                 <Text>
                     Bem-vindos! Queridos amigos e familiares, o dia mais especial de nossas vidas está chegando e
                     gostariámos de contar com a presença de todos vocês.
@@ -85,9 +86,9 @@ export default function Home () {
 
                 <ConfirmAttendanceButton>CONFIRMAR PRESENÇA</ConfirmAttendanceButton>
             </ConfirmAttendanceContent>
-            <CountDownContent>
-                <Text>Contagem regressiva</Text>
-            </CountDownContent>
+
+            <CountdownTimer targetDate={new Date('2023-10-28 15:00:00')}/>
+
             <NextEventContent>
                 <InformationEvent>
                     <Text>Casamento</Text>
@@ -103,6 +104,19 @@ export default function Home () {
                     <h1>t</h1>
                 </MapOfEvent>
             </NextEventContent>
+
+            <TipsContent>
+                <ConfirmAttendanceTitle>Dicas</ConfirmAttendanceTitle>
+                <ul>
+                    <li>O local será no parque da cidade recheado de árvores e plantas. Apesar do horário ser X, a noite
+                        costuma esfriar. Não esqueça de levar um casaquinho.
+                    </li>
+                    <li>Esta daqui é outra dica para o dia do casamento</li>
+                    <li>Esta daqui é mais uma outra dica</li>
+                    <li>Esta nem se fala, uma dicona</li>
+                    <li>Esta é uma diquissíma importantissíma</li>
+                </ul>
+            </TipsContent>
         </Container>
     )
 }

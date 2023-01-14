@@ -14,15 +14,19 @@ export const Text = styled('h1', {
 })
 
 export const ImageContent = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     width: '100%',
-    height: '400px',
+    height: 'auto',
     backgroundColor: '$card',
     marginBottom: '1rem',
 
     'h1': {
-        marginTop: '10rem',
+        padding: '1.5rem 0',
+        maxWidth: 500,
         textAlign: 'center',
-        fontSize: '1.2rem',
+        fontSize: '1rem',
     },
 })
 
@@ -31,6 +35,8 @@ export const AboutUsContent = styled('div', {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+
+    padding: '0 5rem',
 })
 
 export const AboutUsTitle = styled('h1', {
@@ -169,7 +175,13 @@ export const ConfirmAttendanceInput= styled('input', {
 export const CheckBoxesConfirm = styled('div', {
     maxWidth: '55%',
     display: 'flex',
-    padding: '1rem'
+    padding: '1rem',
+
+    'p': {
+        marginLeft: '0.5rem',
+        fontSize: '1rem',
+        fontFamily: 'Roboto'
+    }
 })
 
 export const ConfirmAttendanceButton = styled('button', {
@@ -180,8 +192,6 @@ export const ConfirmAttendanceButton = styled('button', {
     fontFamily: 'Roboto'
 })
 
-export const CountDownContent = styled('div', {})
-
 export const NextEventContent = styled('div', {})
 export const InformationEvent = styled('div', {})
 export const MapOfEvent = styled('div', {})
@@ -190,4 +200,10 @@ export const WeddingGiftContent = styled('div', {})
 
 export const GroomsmenContent = styled('div', {})
 
-export const TipsContent = styled('div', {})
+export const TipsContent = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '2rem',
+    maxWidth: 900,
+})
