@@ -58,7 +58,7 @@ export const BrideAndGroomContent = styled('div', {
 
     'img': {
         borderRadius: '50%',
-    }
+    },
 })
 
 export const Bride = styled('div', {
@@ -76,7 +76,7 @@ export const Bride = styled('div', {
     'p': {
         backgroundColor: '$green100',
         fontWeight: '700',
-    }
+    },
 })
 
 export const Groom = styled('div', {
@@ -92,7 +92,7 @@ export const Groom = styled('div', {
     'p': {
         backgroundColor: '$green100',
         fontWeight: '700',
-    }
+    },
 })
 
 export const KnowingEachOtherUntilMarriage = styled('div', {
@@ -106,10 +106,10 @@ export const KnowingEachOtherUntilMarriage = styled('div', {
 export const OurStory = styled('div', {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
 })
 
-export const OurStoryTitle = styled( DefaultTitle, {
+export const OurStoryTitle = styled(DefaultTitle, {
     marginBottom: '1.3rem',
     fontSize: '1.6rem',
     textAlign: 'center',
@@ -121,9 +121,9 @@ export const OurStoryText = styled('p', {
 export const MarriageProposal = styled('div', {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
 })
-export const MarriageProposalTitle = styled( DefaultTitle, {
+export const MarriageProposalTitle = styled(DefaultTitle, {
     marginBottom: '1.3rem',
     fontSize: '1.6rem',
     textAlign: 'center',
@@ -146,18 +146,16 @@ export const ConfirmAttendanceContent = styled('div', {
 
     'h1': {
         marginBottom: '2rem',
-    }
+    },
 })
 
-export const ConfirmAttendanceTitle = styled(AboutUsTitle, {
-
-})
+export const ConfirmAttendanceTitle = styled(AboutUsTitle, {})
 
 export const LabelConfirmAttendance = styled('label', {
     marginTop: '1rem',
 })
 
-export const ConfirmAttendanceInput= styled('input', {
+export const ConfirmAttendanceInput = styled('input', {
 
     width: '80%',
     maxWidth: 600,
@@ -169,7 +167,7 @@ export const ConfirmAttendanceInput= styled('input', {
     textTransform: 'uppercase',
     '&:focus': {
         padding: '0 0.5rem',
-    }
+    },
 })
 
 export const CheckBoxesConfirm = styled('div', {
@@ -180,8 +178,8 @@ export const CheckBoxesConfirm = styled('div', {
     'p': {
         marginLeft: '0.5rem',
         fontSize: '1rem',
-        fontFamily: 'Roboto'
-    }
+        fontFamily: 'Roboto',
+    },
 })
 
 export const ConfirmAttendanceButton = styled('button', {
@@ -189,7 +187,7 @@ export const ConfirmAttendanceButton = styled('button', {
     width: '30%',
     height: '2.3rem',
     fontWeight: 'bold',
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto',
 })
 
 export const NextEventContent = styled('div', {})

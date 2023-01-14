@@ -25,7 +25,6 @@ import {
     ConfirmAttendanceTitle,
     ConfirmAttendanceButton, TipsContent,
 } from '../styles/pages/app'
-import Product from './product/product'
 import Image from 'next/image'
 import {faker} from '@faker-js/faker/locale/pt_BR'
 import CountdownTimer from './components/Counter'
@@ -38,7 +37,13 @@ export default function Home () {
         <Container>
             <Text>Lucas e Ana</Text>
             <ImageContent>
-                <Image src={image} width={1440} height={300} alt={''}/>
+                <Image
+                    src={image}
+                    height={400}
+                    width={20}
+                    style={{objectFit: 'cover', width: '100%'}}
+                    alt={''}
+                />
                 <Text>
                     Bem-vindos! Queridos amigos e familiares, o dia mais especial de nossas vidas está chegando e
                     gostariámos de contar com a presença de todos vocês.

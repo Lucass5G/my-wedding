@@ -8,12 +8,12 @@ interface ProductProps {
     ImageURL?: string;
 }
 
-export default function Product({description, name, ImageURL}: ProductProps) {
-    return(
+export default function Product ({description, name, ImageURL}: ProductProps) {
+    return (
         <ProductContainer>
-                <h1>{name}</h1>
+            <h1>{name}</h1>
             <ProductImage>
-                <Image src={champanheImage} alt={""} width={300} />
+                <Image src={champanheImage} alt={''} width={300}/>
             </ProductImage>
             <ProductInfo>
                 <p>{description}</p>
