@@ -12,11 +12,15 @@ export const Timers = styled('div', {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'baseline',
     gap: '1rem',
     marginTop: '1rem',
 
     'span': {
-        fontSize: '2rem',
+        fontSize: '3rem',
+    },
+
+    'p': {
+        fontSize: '1.2rem',
     }
 })

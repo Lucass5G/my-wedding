@@ -33,19 +33,19 @@ function CountdownTimer ({targetDate}: { targetDate: Date }) {
             <h1>Contagem regressiva</h1>
             <Timers>
                 <span>{timeLeft.months}</span>
-                <p>Meses</p>
+                {timeLeft.months === 1 ? <p>Mês</p> : <p>Meses</p>}
 
                 <span>{timeLeft.weeks}</span>
-                <p>Semanas</p>
+                {timeLeft.months === 1 ? <p>Semana</p> : <p>Semanas</p>}
 
                 <span>{timeLeft.days}</span>
-                <p>Dias</p>
+                {timeLeft.months === 1 ? <p>Dia</p> : <p>Dias</p>}
 
                 <span>{timeLeft.hours}</span>
-                <p>Horas</p>
+                {timeLeft.months === 1 ? <p>Hora</p> : <p>Horas</p>}
 
                 <span>{timeLeft.minutes}</span>
-                <p>Minutos</p>
+                {timeLeft.months === 1 ? <p>Minuto</p> : <p>Minutos</p>}
             </Timers>
         </CountDownContent>
     )
