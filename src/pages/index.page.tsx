@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import {
     Container,
     AboutUsContent,
@@ -25,9 +26,14 @@ import {
     ConfirmAttendanceTitle,
     ConfirmAttendanceButton, TipsContent, Header,
 } from '../styles/pages/app'
+
 import Image from 'next/image'
 import {faker} from '@faker-js/faker/locale/pt_BR'
 import CountdownTimer from './components/Counter'
+
+const Map = dynamic(() => import('./components/Maps'), {
+    ssr: false,
+})
 
 const image = faker.image.nightlife()
 const bigText = 'Repellat accusamus beatae sapiente sint aperiam. At magnam temporibus eos aut incidunt. Explicabo quam labore tempore beatae sapiente maiores. Expedita optio temporibus dolore ratione magni perferendis qui. Accusamus eius maxime beatae tenetur eius. Animi dolore accusantium ad. Sapiente animi vel. Veritatis error est laborum dolorum. Tempora voluptatem cupiditate quam expedita omnis quam temporibus. Corporis exercitationem reiciendis minima quam nihil. Molestias iure ipsam necessitatibus inventore minus. Ducimus earum harum id voluptate. Hic ratione odio assumenda sint alias repellat a. Labore commodi itaque. Beatae perferendis nam libero eum beatae. Dolorem voluptatibus molestias sunt laborum voluptatum nihil tempore doloremque.'
@@ -89,7 +95,7 @@ export default function Home () {
                 <LabelConfirmAttendance>Seu nome completo:</LabelConfirmAttendance>
                 <ConfirmAttendanceInput type="text"/>
 
-                <CheckBoxesConfirm >
+                <CheckBoxesConfirm>
                     <input type="checkbox"/>
                     <p>Confirme apenas a minha presença</p>
                     <div style={{margin: '0.5rem'}}></div>
@@ -103,19 +109,19 @@ export default function Home () {
 
             <CountdownTimer targetDate={new Date('2023-10-28 15:00:00')}/>
 
+            <Text>Próximos eventos</Text>
             <NextEventContent id="nextevent">
                 <InformationEvent>
                     <Text>Casamento</Text>
                     <h3>Data:</h3>
-                    <p>10/10/2021</p>
+                    <p>28/10/2023</p>
                     <h3>Local:</h3>
-                    <p>Av. Paulista, 1000</p>
+                    <p>Parque da cidade</p>
                     <h3>Horário:</h3>
-                    <p>10:00</p>
+                    <p>15:00</p>
                 </InformationEvent>
                 <MapOfEvent>
-
-                    <h1>t</h1>
+                    <Map/>
                 </MapOfEvent>
             </NextEventContent>
 
@@ -131,6 +137,12 @@ export default function Home () {
                     <li>Esta é uma diquissíma importantissíma</li>
                 </ul>
             </TipsContent>
+            <div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10595.518927284726!2d-47.91009065039261!3d-15.79434745364092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3a8d1adcfa01%3A0x28135d84739659de!2sParque%20da%20Cidade%20Sarah%20Kubitschek!5e0!3m2!1spt-BR!2sbr!4v1673800809201!5m2!1spt-BR!2sbr"
+                    width="600" height="450" allowFullScreen loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </Container>
     )
 }

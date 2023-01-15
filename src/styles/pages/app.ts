@@ -20,11 +20,11 @@ export const Header = styled('header', {
     },
 
     'a:not(:last-child)': {
-        marginRight: '1rem'
+        marginRight: '1rem',
     },
 
     '@media (max-width: 600px)': {
-        display: 'none'
+        display: 'none',
     },
 
 })
@@ -45,7 +45,7 @@ export const ImageContent = styled('div', {
 
     'h1': {
         padding: '1.5rem 0',
-        maxWidth: 500,
+        maxWidth: 800,
         textAlign: 'center',
         fontSize: '1rem',
     },
@@ -211,13 +211,34 @@ export const ConfirmAttendanceButton = styled('button', {
     fontFamily: 'Roboto',
 })
 
-export const NextEventContent = styled('div', {})
-export const InformationEvent = styled('div', {})
-export const MapOfEvent = styled('div', {})
+export const NextEventContent = styled('div', {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    height: '30rem',
+    maxHeight: '100%',
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+
+    gap: '3rem',
+    padding: '0 15rem',
+})
+export const InformationEvent = styled('div', {
+    textAlign: 'center',
+
+    'h3': {
+        fontFamily: 'Handlee',
+        fontSize: '1.5rem',
+        backgroundColor: '$green100',
+    },
+})
+export const MapOfEvent = styled('div', {
+    width: '80%',
+    height: '80%',
+})
 
 export const WeddingGiftContent = styled('div', {})
-
-export const GroomsmenContent = styled('div', {})
 
 export const TipsContent = styled('div', {
     display: 'flex',
