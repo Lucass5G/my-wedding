@@ -23,33 +23,42 @@ import {
     ConfirmAttendanceInput,
     LabelConfirmAttendance,
     ConfirmAttendanceTitle,
-    ConfirmAttendanceButton, TipsContent,
+    ConfirmAttendanceButton, TipsContent, Header,
 } from '../styles/pages/app'
 import Image from 'next/image'
 import {faker} from '@faker-js/faker/locale/pt_BR'
 import CountdownTimer from './components/Counter'
 
-const image = faker.image.people()
+const image = faker.image.nightlife()
 const bigText = 'Repellat accusamus beatae sapiente sint aperiam. At magnam temporibus eos aut incidunt. Explicabo quam labore tempore beatae sapiente maiores. Expedita optio temporibus dolore ratione magni perferendis qui. Accusamus eius maxime beatae tenetur eius. Animi dolore accusantium ad. Sapiente animi vel. Veritatis error est laborum dolorum. Tempora voluptatem cupiditate quam expedita omnis quam temporibus. Corporis exercitationem reiciendis minima quam nihil. Molestias iure ipsam necessitatibus inventore minus. Ducimus earum harum id voluptate. Hic ratione odio assumenda sint alias repellat a. Labore commodi itaque. Beatae perferendis nam libero eum beatae. Dolorem voluptatibus molestias sunt laborum voluptatum nihil tempore doloremque.'
 export default function Home () {
 
     return (
         <Container>
             <Text>Lucas e Ana</Text>
+            <Header>
+                <a href="#aboutus">Os noivos</a>
+                <a href="#confirmAttendance">Confirmar Presença</a>
+                <a href="#countdown">Contagem Regressiva</a>
+                <a href="#nextevent">Próximos Eventos</a>
+                <a href="#tips">Dicas</a>
+            </Header>
             <ImageContent>
                 <Image
                     src={image}
                     height={400}
-                    width={20}
+                    width={2000}
                     style={{objectFit: 'cover', width: '100%'}}
                     alt={''}
+                    quality={100}
+                    priority
                 />
                 <Text>
                     Bem-vindos! Queridos amigos e familiares, o dia mais especial de nossas vidas está chegando e
                     gostariámos de contar com a presença de todos vocês.
                 </Text>
             </ImageContent>
-            <AboutUsContent>
+            <AboutUsContent id="aboutus">
                 <AboutUsTitle>Os noivos</AboutUsTitle>
                 <BrideAndGroomContent>
                     <Bride>
@@ -74,13 +83,13 @@ export default function Home () {
                     </MarriageProposal>
                 </KnowingEachOtherUntilMarriage>
             </AboutUsContent>
-            <ConfirmAttendanceContent>
+            <ConfirmAttendanceContent id="confirmAttendance">
                 <ConfirmAttendanceTitle>Confirme sua presença</ConfirmAttendanceTitle>
 
                 <LabelConfirmAttendance>Seu nome completo:</LabelConfirmAttendance>
                 <ConfirmAttendanceInput type="text"/>
 
-                <CheckBoxesConfirm>
+                <CheckBoxesConfirm >
                     <input type="checkbox"/>
                     <p>Confirme apenas a minha presença</p>
                     <div style={{margin: '0.5rem'}}></div>
@@ -94,7 +103,7 @@ export default function Home () {
 
             <CountdownTimer targetDate={new Date('2023-10-28 15:00:00')}/>
 
-            <NextEventContent>
+            <NextEventContent id="nextevent">
                 <InformationEvent>
                     <Text>Casamento</Text>
                     <h3>Data:</h3>
@@ -110,7 +119,7 @@ export default function Home () {
                 </MapOfEvent>
             </NextEventContent>
 
-            <TipsContent>
+            <TipsContent id="tips">
                 <ConfirmAttendanceTitle>Dicas</ConfirmAttendanceTitle>
                 <ul>
                     <li>O local será no parque da cidade recheado de árvores e plantas. Apesar do horário ser X, a noite

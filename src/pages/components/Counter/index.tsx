@@ -29,7 +29,7 @@ function CountdownTimer ({targetDate}: { targetDate: Date }) {
         return () => clearInterval(intervalId)
     }, [targetDate])
     return (
-        <CountDownContent>
+        <CountDownContent id="countdown">
             <h1>Contagem regressiva</h1>
             <Timers>
                 <span>{timeLeft.months}</span>

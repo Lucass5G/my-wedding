@@ -1,11 +1,32 @@
 import {styled} from '@stitches/react'
 
-export const Container = styled('div', {
+export const Container = styled('main', {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    // padding: '0 rem',
+})
+
+export const Header = styled('header', {
+    padding: '2rem 0',
+
+    'a': {
+        textTransform: 'uppercase',
+        fontSize: '1rem',
+        textDecoration: 'none',
+        color: '$gray-900',
+        fontWeight: 'normal',
+        fontFamily: 'Roboto, sans-serif',
+    },
+
+    'a:not(:last-child)': {
+        marginRight: '1rem'
+    },
+
+    '@media (max-width: 600px)': {
+        display: 'none'
+    },
+
 })
 
 export const Text = styled('h1', {
