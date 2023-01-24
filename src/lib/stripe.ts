@@ -6,5 +6,5 @@ export const stripe = new Stripe(STRIPE_SECRET_KEY, {
     apiVersion: '2022-11-15',
     appInfo: {
         name: 'wedding',
-    }
+    },
 })

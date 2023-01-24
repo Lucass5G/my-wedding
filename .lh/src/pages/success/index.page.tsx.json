@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1674518198437,
@@ -12,6 +12,14 @@
                 {
                     "date": 1674519079075,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import Image from \"next/image\"\r\n import Link from \"next/link\"\r\n import Stripe from \"stripe\"\r\n import { stripe } from \"../../lib/stripe\"\r\n-import { ImageContainer, SucessContainer } from \"./styles\"\r\n+import { ImageContainer, SuccessContainer } from \"./styles\"\r\n \r\n interface SuccessProps {\r\n     customerName: string\r\n     product: {\r\n@@ -20,9 +20,9 @@\n             <Head>\r\n                 <title>Contribuição efetuada</title>\r\n                 <meta name=\"robots\" content=\"noindex\" />\r\n             </Head>\r\n-            <SucessContainer>\r\n+            <SuccessContainer>\r\n                 <h1>Contribuição efetuada</h1>\r\n                 <ImageContainer>\r\n                     <Image src={product.imageURL} alt='' width={200} height={200} />\r\n                 </ImageContainer>\r\n@@ -31,9 +31,9 @@\n \r\n                 <Link href='/'>\r\n                     Voltar para a página inicial\r\n                 </Link>\r\n-            </SucessContainer>\r\n+            </SuccessContainer>\r\n         </>\r\n     )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1674520608896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,9 @@\n         }\r\n     }\r\n \r\n     const session = await stripe.checkout.sessions.retrieve(session_id as string, {\r\n+        apiKey: process.env.STRIPE_API_KEY || '',\r\n         expand: ['line_items', 'line_items.data.price.product']\r\n     })\r\n \r\n     const customerName =  session.customer_details?.name || 'Anônimo'\r\n"
+                },
+                {
+                    "date": 1674520615797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,8 @@\n         }\r\n     }\r\n \r\n     const session = await stripe.checkout.sessions.retrieve(session_id as string, {\r\n-        apiKey: process.env.STRIPE_API_KEY || '',\r\n         expand: ['line_items', 'line_items.data.price.product']\r\n     })\r\n \r\n     const customerName =  session.customer_details?.name || 'Anônimo'\r\n"
                 }
             ],
             "date": 1674518198437,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1674505666279,
@@ -12,6 +12,10 @@
                 {
                     "date": 1674507710967,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import Stripe from 'stripe'\r\n \r\n-const STRIPE_SECRET_KEY = 'sk_test_51MAHAnD2xnnfjSLjEeCT0is8m3uJuFSBDdGiLVa0uEGOsGBstapCUd5tJoYuGF6lENyC0lgecgVFhi9pER3a0pMN00OMVzDgvJ'\r\n+const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || ''\r\n \r\n export const stripe = new Stripe(STRIPE_SECRET_KEY, {\r\n     apiVersion: '2022-11-15',\r\n     appInfo: {\r\n"
+                },
+                {
+                    "date": 1674520231604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,6 @@\n export const stripe = new Stripe(STRIPE_SECRET_KEY, {\r\n     apiVersion: '2022-11-15',\r\n     appInfo: {\r\n         name: 'wedding',\r\n-    }\r\n+    },\r\n })\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1674505666279,
