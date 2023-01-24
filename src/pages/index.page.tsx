@@ -31,9 +31,10 @@ import Image from 'next/image'
 import { faker } from '@faker-js/faker/locale/pt_BR'
 import CountdownTimer from './components/Counter'
 
-import Product from './product/product.page'
+import Product from './product/product'
 import { stripe } from '../lib/stripe'
 import Stripe from 'stripe'
+import { GetStaticProps } from 'next'
 
 
 
@@ -161,7 +162,7 @@ export default function Home({ products }: ProductProps) {
     )
 }
 
-export async function getServerSideProps() {
+export const getStaticProps:GetStaticProps = async () => {
     try {
         const response = await stripe.products.list({
             expand: ['data.default_price'],
@@ -171,10 +172,6 @@ export async function getServerSideProps() {
                 cause: response,
             })
         }
-
-        // console.log('***************************')
-        // console.log(response)
-        // console.log('***************************')
 
         const formatAmount = (amount: number | null) => {
             if (!amount) return
@@ -199,14 +196,15 @@ export async function getServerSideProps() {
 
         return {
             props: { products },
-
+            revalidate: 60* 60 * 24, // 24 hours
         }
     } catch (error) {
         console.error('Deu ruim', {
             cause: error,
         })
         return {
-            props: {}
+            props: {},
+            revalidate: 60* 60 * 24, // 24 hours
         }
     }
 }

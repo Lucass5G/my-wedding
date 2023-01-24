@@ -25,7 +25,7 @@ interface Product {
     priceId: string
 }
 
-const Product = ({ products }: ProductProps) => {
+const Product = ({ products }: ProductProps):JSX.Element => { 
     const handleContribute = async (unitProduct:Product) => {
         try {
             const formData = new FormData()

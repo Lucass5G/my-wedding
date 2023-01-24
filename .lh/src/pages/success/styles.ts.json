@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 35,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1674518050616,
@@ -148,6 +148,10 @@
                 {
                     "date": 1674518655451,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,10 +48,10 @@\n \r\n \r\n export const ImageContainer =  styled('div', {\r\n     width: '100%',\r\n-    maxWidth: 300,\r\n-    height: 145,\r\n+    maxWidth: 200,\r\n+    height: 200,\r\n     background: 'linear-gradient(180deg, #1ea383 0%, #7465d4 100%)',\r\n     borderRadius: 8,\r\n     padding: '0.25rem',\r\n     marginTop: '4rem',\r\n"
+                },
+                {
+                    "date": 1674519078035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { styled } from \"../../styles\";\r\n \r\n-export const SucessContainer = styled(\"main\", {\r\n+export const SuccessContainer = styled(\"main\", {\r\n     display: 'flex',\r\n     flexDirection: 'column',\r\n     alignItems: 'center',\r\n     justifyContent: 'center',\r\n"
                 }
             ],
             "date": 1674518050616,

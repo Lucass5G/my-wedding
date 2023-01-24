@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/product/product.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1674519894627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1674519894627,
+            "name": "Commit-0",
+            "content": "import axios from 'axios';\r\nimport Image from 'next/image';\r\nimport { useState } from 'react';\r\nimport Stripe from 'stripe';\r\nimport { stripe } from '../../lib/stripe';\r\nimport { ProductContainer, ProductContent, ProductImage, ProductInfo } from '../../styles/page/product'\r\ninterface ProductProps {\r\n    products: {\r\n        id: string\r\n        description: string;\r\n        name: string;\r\n        imageURL: string;\r\n        price: string\r\n        priceId: string\r\n    }[]\r\n}\r\n\r\n\r\ninterface Product {\r\n    id: string\r\n    description: string;\r\n    name: string;\r\n    imageURL: string;\r\n    price: string\r\n    priceId: string\r\n}\r\n\r\nconst Product = ({ products }: ProductProps):JSX.Element => { \r\n    const handleContribute = async (unitProduct:Product) => {\r\n        try {\r\n            const formData = new FormData()\r\n            formData.append('priceId', unitProduct.priceId)\r\n            \r\n            const response  =  await axios.post('/api/checkout', {\r\n                priceId: unitProduct.priceId\r\n            })\r\n\r\n\r\n            const { checkoutURL } = response.data\r\n\r\n            window.location.href = checkoutURL\r\n\r\n        } catch (error) {\r\n            console.error('Ocorreu um erro ao processar o pagamento', {\r\n                cause: error,\r\n            })\r\n        }\r\n    }\r\n\r\n    return (\r\n        <ProductContainer>\r\n            {products.map(product => {\r\n                return (\r\n                    <ProductContent key={product.id}>\r\n                        <ProductImage>\r\n                            <Image src={product.imageURL} alt='' width={300} height={300} />\r\n                        </ProductImage>\r\n                        <h3>{product?.name}</h3>\r\n                        <ProductInfo>\r\n                            <p>{product?.description}</p>\r\n                        </ProductInfo>\r\n                        <button onClick={() => {\r\n                            handleContribute(product)\r\n                        }}>{product.price}</button>\r\n                    </ProductContent>\r\n                )\r\n            })}\r\n        </ProductContainer>\r\n    )\r\n}\r\n\r\nexport default Product"
+        }
+    ]
+}

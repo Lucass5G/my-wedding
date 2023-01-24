@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 43,
+            "activePatchIndex": 45,
             "patches": [
                 {
                     "date": 1674505998730,
@@ -180,6 +180,14 @@
                 {
                     "date": 1674517021167,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \r\n \r\n             const { checkoutURL } = response.data\r\n \r\n-            // window.location.href = checkoutURL\r\n+            window.location.href = checkoutURL\r\n \r\n             console.log('Response', response)\r\n \r\n         } catch (error) {\r\n"
+                },
+                {
+                    "date": 1674519146905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,13 @@\n     price: string\r\n     priceId: string\r\n }\r\n \r\n-const Product = ({ products }: ProductProps) => {\r\n+const Product = ({ products }: ProductProps) => { \r\n+    if(!products) {\r\n+        return []\r\n+    }\r\n+\r\n     const handleContribute = async (unitProduct:Product) => {\r\n         try {\r\n             const formData = new FormData()\r\n             formData.append('priceId', unitProduct.priceId)\r\n@@ -39,10 +43,8 @@\n             const { checkoutURL } = response.data\r\n \r\n             window.location.href = checkoutURL\r\n \r\n-            console.log('Response', response)\r\n-\r\n         } catch (error) {\r\n             console.error('Ocorreu um erro ao processar o pagamento', {\r\n                 cause: error,\r\n             })\r\n"
+                },
+                {
+                    "date": 1674519170194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n }\r\n \r\n const Product = ({ products }: ProductProps) => { \r\n     if(!products) {\r\n-        return []\r\n+        return console.log('Error')\r\n     }\r\n \r\n     const handleContribute = async (unitProduct:Product) => {\r\n         try {\r\n"
                 }
             ],
             "date": 1674505998730,

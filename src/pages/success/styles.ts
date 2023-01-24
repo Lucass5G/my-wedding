@@ -1,6 +1,6 @@
 import { styled } from "../../styles";
 
-export const SucessContainer = styled("main", {
+export const SuccessContainer = styled("main", {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

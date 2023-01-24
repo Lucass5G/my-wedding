@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1674505544629,
@@ -52,6 +52,18 @@
                 {
                     "date": 1674514831872,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -184,17 +184,17 @@\n             }).format(amount / 100)\n         }\n         const products = response.data.map(product => {\n             const price = product.default_price as Stripe.Price\n+            console.log('PRICE', price)\n             return {\n                 id: product.id,\n                 name: product.name,\n                 description: product.description,\n                 imageURL: product.images[0],\n                 price: formatAmount(price.unit_amount),\n                 priceId: price.id\n             }\n-            console.log('PRICE', price)\n         })\n \n \n         return {\n"
+                },
+                {
+                    "date": 1674519688722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n \n import Product from './product/product.page'\n import { stripe } from '../lib/stripe'\n import Stripe from 'stripe'\n+import { GetStaticProps } from 'next'\n \n \n \n const image = faker.image.nightlife()\n@@ -160,9 +161,9 @@\n         </Container>\n     )\n }\n \n-export async function getServerSideProps() {\n+export const getStaticProps:GetStaticProps = async () => {\n     try {\n         const response = await stripe.products.list({\n             expand: ['data.default_price'],\n         })\n@@ -171,12 +172,8 @@\n                 cause: response,\n             })\n         }\n \n-        // console.log('***************************')\n-        // console.log(response)\n-        // console.log('***************************')\n-\n         const formatAmount = (amount: number | null) => {\n             if (!amount) return\n             return new Intl.NumberFormat('pt-BR', {\n                 style: 'currency',\n@@ -198,9 +195,9 @@\n \n \n         return {\n             props: { products },\n-\n+            revalidate: 60* 60 * 24, // 24 hours\n         }\n     } catch (error) {\n         console.error('Deu ruim', {\n             cause: error,\n"
+                },
+                {
+                    "date": 1674519702212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -202,8 +202,9 @@\n         console.error('Deu ruim', {\n             cause: error,\n         })\n         return {\n-            props: {}\n+            props: {},\n+            revalidate: 60* 60 * 24, // 24 hours\n         }\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1674519900688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n import Image from 'next/image'\n import { faker } from '@faker-js/faker/locale/pt_BR'\n import CountdownTimer from './components/Counter'\n \n-import Product from './product/product.page'\n+import Product from './product/product'\n import { stripe } from '../lib/stripe'\n import Stripe from 'stripe'\n import { GetStaticProps } from 'next'\n \n"
                 }
             ],
             "date": 1674505544629,

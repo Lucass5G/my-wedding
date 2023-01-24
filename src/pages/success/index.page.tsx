@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Stripe from "stripe"
 import { stripe } from "../../lib/stripe"
-import { ImageContainer, SucessContainer } from "./styles"
+import { ImageContainer, SuccessContainer } from "./styles"
 
 interface SuccessProps {
     customerName: string
@@ -21,7 +21,7 @@ export default function Success({ customerName, product }: SuccessProps) {
                 <title>Contribuição efetuada</title>
                 <meta name="robots" content="noindex" />
             </Head>
-            <SucessContainer>
+            <SuccessContainer>
                 <h1>Contribuição efetuada</h1>
                 <ImageContainer>
                     <Image src={product.imageURL} alt='' width={200} height={200} />
@@ -32,7 +32,7 @@ export default function Success({ customerName, product }: SuccessProps) {
                 <Link href='/'>
                     Voltar para a página inicial
                 </Link>
-            </SucessContainer>
+            </SuccessContainer>
         </>
     )
 }
