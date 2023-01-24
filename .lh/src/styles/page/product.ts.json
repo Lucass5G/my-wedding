@@ -1,0 +1,142 @@
+{
+    "sourceFile": "src/styles/page/product.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 31,
+            "patches": [
+                {
+                    "date": 1674506826016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674506903471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     width: '100%',\r\n     maxWidth: 400,\r\n     borderRadius: 8,\r\n     display: 'flex',\r\n-    flexDirection: 'column',\r\n+    flexDirection: 'row',\r\n     justifyContent: 'center',\r\n     alignItems: 'center',\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674506920817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import {styled} from '../index'\r\n \r\n export const ProductContainer = styled('main', {\r\n-    backgroundColor: '$green300',\r\n+    backgroundColor: '$green400',\r\n     width: '100%',\r\n     maxWidth: 400,\r\n     borderRadius: 8,\r\n     display: 'flex',\r\n"
+                },
+                {
+                    "date": 1674506971959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,9 @@\n import {styled} from '../index'\r\n \r\n export const ProductContainer = styled('main', {\r\n-    backgroundColor: '$green400',\r\n-    width: '100%',\r\n-    maxWidth: 400,\r\n-    borderRadius: 8,\r\n-    display: 'flex',\r\n-    flexDirection: 'row',\r\n-    justifyContent: 'center',\r\n-    alignItems: 'center',\r\n+    display: 'grid',\r\n+    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',\r\n })\r\n \r\n export const ProductContent = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674506983556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import {styled} from '../index'\r\n \r\n export const ProductContainer = styled('main', {\r\n     display: 'grid',\r\n-    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',\r\n+    gridTemplateColumns: 'repeat(3, 1fr)',\r\n })\r\n \r\n export const ProductContent = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674506990268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import {styled} from '../index'\r\n \r\n export const ProductContainer = styled('main', {\r\n+    backgroundColor: '$green100',\r\n     display: 'grid',\r\n     gridTemplateColumns: 'repeat(3, 1fr)',\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674506998250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n export const ProductContainer = styled('main', {\r\n     backgroundColor: '$green100',\r\n     display: 'grid',\r\n     gridTemplateColumns: 'repeat(3, 1fr)',\r\n+    gap: 1 ;\r\n })\r\n \r\n export const ProductContent = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674507003618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export const ProductContainer = styled('main', {\r\n     backgroundColor: '$green100',\r\n     display: 'grid',\r\n     gridTemplateColumns: 'repeat(3, 1fr)',\r\n-    gap: 1 ;\r\n+    gap: 1,\r\n })\r\n \r\n export const ProductContent = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674507008806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export const ProductContainer = styled('main', {\r\n     backgroundColor: '$green100',\r\n     display: 'grid',\r\n     gridTemplateColumns: 'repeat(3, 1fr)',\r\n-    gap: 1,\r\n+    gap: 3,\r\n })\r\n \r\n export const ProductContent = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674507023004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export const ProductContainer = styled('main', {\r\n     backgroundColor: '$green100',\r\n     display: 'grid',\r\n     gridTemplateColumns: 'repeat(3, 1fr)',\r\n-    gap: 3,\r\n+    gap: ,\r\n })\r\n \r\n export const ProductContent = styled('div', {\r\n     backgroundColor: '$green300',\r\n@@ -15,8 +15,9 @@\n     display: 'flex',\r\n     flexDirection: 'column',\r\n     justifyContent: 'center',\r\n     alignItems: 'center',\r\n+    gap:2 ,\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n     width: '100%',\r\n"
+                },
+                {
+                    "date": 1674507029069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export const ProductContainer = styled('main', {\r\n     backgroundColor: '$green100',\r\n     display: 'grid',\r\n     gridTemplateColumns: 'repeat(3, 1fr)',\r\n-    gap: ,\r\n+\r\n })\r\n \r\n export const ProductContent = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674507066831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,12 @@\n     display: 'flex',\r\n     flexDirection: 'column',\r\n     justifyContent: 'center',\r\n     alignItems: 'center',\r\n-    gap:2 ,\r\n+    \r\n+    '&:(nth-first-child)': {\r\n+        margin: 3rem ;\r\n+    }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n     width: '100%',\r\n"
+                },
+                {
+                    "date": 1674507072067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     justifyContent: 'center',\r\n     alignItems: 'center',\r\n     \r\n     '&:(nth-first-child)': {\r\n-        margin: 3rem ;\r\n+        margin: '3rem',\r\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n"
+                },
+                {
+                    "date": 1674507110327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n \r\n })\r\n \r\n export const ProductContent = styled('div', {\r\n-    backgroundColor: '$green300',\r\n     width: '100%',\r\n     maxWidth: 400,\r\n     borderRadius: 8,\r\n     display: 'flex',\r\n@@ -22,8 +21,10 @@\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n+    backgroundColor: '$green300',\r\n+\r\n     width: '100%',\r\n     display: 'flex',\r\n     justifyContent: 'center',\r\n     img: {\r\n"
+                },
+                {
+                    "date": 1674507163686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import {styled} from '../index'\r\n \r\n export const ProductContainer = styled('main', {\r\n-    backgroundColor: '$green100',\r\n+    backgroundColor: '$green900',\r\n     display: 'grid',\r\n     gridTemplateColumns: 'repeat(3, 1fr)',\r\n \r\n })\r\n@@ -14,12 +14,8 @@\n     display: 'flex',\r\n     flexDirection: 'column',\r\n     justifyContent: 'center',\r\n     alignItems: 'center',\r\n-    \r\n-    '&:(nth-first-child)': {\r\n-        margin: '3rem',\r\n-    }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674507264118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,21 @@\n import {styled} from '../index'\r\n \r\n export const ProductContainer = styled('main', {\r\n-    backgroundColor: '$green900',\r\n+    backgroundColor: '$green100',\r\n     display: 'grid',\r\n     gridTemplateColumns: 'repeat(3, 1fr)',\r\n \r\n })\r\n \r\n export const ProductContent = styled('div', {\r\n     width: '100%',\r\n-    maxWidth: 400,\r\n-    borderRadius: 8,\r\n+    maxWidth: '400px',\r\n+    borderRadius: '8px',\r\n     display: 'flex',\r\n-    flexDirection: 'column',\r\n-    justifyContent: 'center',\r\n+    flexDirection:' column',\r\n     alignItems: 'center',\r\n+    justifyContent: 'space-around',\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674507327753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n     borderRadius: '8px',\r\n     display: 'flex',\r\n     flexDirection:' column',\r\n     alignItems: 'center',\r\n-    justifyContent: 'space-around',\r\n+    justifyContent: 'flex-end',\r\n+    padding: 1rem,\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674507358135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,13 @@\n     display: 'flex',\r\n     flexDirection:' column',\r\n     alignItems: 'center',\r\n     justifyContent: 'flex-end',\r\n-    padding: 1rem,\r\n+    padding: '1rem',\r\n+\r\n+    'button': {\r\n+        width: '100%',\r\n+    }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n     backgroundColor: '$green300',\r\n"
+                },
+                {
+                    "date": 1674507364773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     justifyContent: 'flex-end',\r\n     padding: '1rem',\r\n \r\n     'button': {\r\n-        width: '100%',\r\n+        width: '40%',\r\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n"
+                },
+                {
+                    "date": 1674507381775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,10 @@\n     padding: '1rem',\r\n \r\n     'button': {\r\n         width: '40%',\r\n+        marginTop: '1rem',\r\n+        textAlign: 'center',\r\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n"
+                },
+                {
+                    "date": 1674507394152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n     'button': {\r\n         width: '40%',\r\n         marginTop: '1rem',\r\n         textAlign: 'center',\r\n+        fontSize: '1rem',\r\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n"
+                },
+                {
+                    "date": 1674507412064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n         width: '40%',\r\n         marginTop: '1rem',\r\n         textAlign: 'center',\r\n         fontSize: '1rem',\r\n+        fontFamily: 'Roboto'\r\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n"
+                },
+                {
+                    "date": 1674507428586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,12 @@\n \r\n     'button': {\r\n         width: '40%',\r\n         marginTop: '1rem',\r\n+        padding: '2rem',\r\n         textAlign: 'center',\r\n         fontSize: '1rem',\r\n-        fontFamily: 'Roboto'\r\n+        fontFamily: 'Roboto',\r\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n"
+                },
+                {
+                    "date": 1674507436620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \r\n     'button': {\r\n         width: '40%',\r\n         marginTop: '1rem',\r\n-        padding: '2rem',\r\n+        padding: '1.5rem 2',\r\n         textAlign: 'center',\r\n         fontSize: '1rem',\r\n         fontFamily: 'Roboto',\r\n     }\r\n"
+                },
+                {
+                    "date": 1674507443258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \r\n     'button': {\r\n         width: '40%',\r\n         marginTop: '1rem',\r\n-        padding: '1.5rem 2',\r\n+        padding: '1.5rem',\r\n         textAlign: 'center',\r\n         fontSize: '1rem',\r\n         fontFamily: 'Roboto',\r\n     }\r\n"
+                },
+                {
+                    "date": 1674507451830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \r\n     'button': {\r\n         width: '40%',\r\n         marginTop: '1rem',\r\n-        padding: '1.5rem',\r\n+        padding: '0.7rem',\r\n         textAlign: 'center',\r\n         fontSize: '1rem',\r\n         fontFamily: 'Roboto',\r\n     }\r\n"
+                },
+                {
+                    "date": 1674507473889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,14 +17,15 @@\n     justifyContent: 'flex-end',\r\n     padding: '1rem',\r\n \r\n     'button': {\r\n-        width: '40%',\r\n+        width: '50%',\r\n         marginTop: '1rem',\r\n         padding: '0.7rem',\r\n         textAlign: 'center',\r\n         fontSize: '1rem',\r\n         fontFamily: 'Roboto',\r\n+        border: none ,\r\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n"
+                },
+                {
+                    "date": 1674507479371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         padding: '0.7rem',\r\n         textAlign: 'center',\r\n         fontSize: '1rem',\r\n         fontFamily: 'Roboto',\r\n-        border: none ,\r\n+        border: 'none',\r\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n"
+                },
+                {
+                    "date": 1674507499514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,13 @@\n         textAlign: 'center',\r\n         fontSize: '1rem',\r\n         fontFamily: 'Roboto',\r\n         border: 'none',\r\n+\r\n+        '&:hover': {\r\n+            cursor: 'pointer',\r\n+            backgroundColor: '$green300',\r\n+        }\r\n     }\r\n })\r\n \r\n export const ProductImage = styled('div', {\r\n"
+                },
+                {
+                    "date": 1674507510447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,10 @@\n         border: 'none',\r\n \r\n         '&:hover': {\r\n             cursor: 'pointer',\r\n-            backgroundColor: '$green300',\r\n+            backgroundColor: '$green900',\r\n+            color: '$white',\r\n         }\r\n     }\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674507530865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \r\n         '&:hover': {\r\n             cursor: 'pointer',\r\n             backgroundColor: '$green900',\r\n-            color: '$white',\r\n+            color: '$card',\r\n         }\r\n     }\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674507551227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n         padding: '0.7rem',\r\n         textAlign: 'center',\r\n         fontSize: '1rem',\r\n         fontFamily: 'Roboto',\r\n+        fontWeight: 'bold',\r\n         border: 'none',\r\n \r\n         '&:hover': {\r\n             cursor: 'pointer',\r\n"
+                }
+            ],
+            "date": 1674506826016,
+            "name": "Commit-0",
+            "content": "import {styled} from '../index'\r\n\r\nexport const ProductContainer = styled('main', {\r\n    backgroundColor: '$green300',\r\n    width: '100%',\r\n    maxWidth: 400,\r\n    borderRadius: 8,\r\n    display: 'flex',\r\n    flexDirection: 'column',\r\n    justifyContent: 'center',\r\n    alignItems: 'center',\r\n})\r\n\r\nexport const ProductContent = styled('div', {\r\n    backgroundColor: '$green300',\r\n    width: '100%',\r\n    maxWidth: 400,\r\n    borderRadius: 8,\r\n    display: 'flex',\r\n    flexDirection: 'column',\r\n    justifyContent: 'center',\r\n    alignItems: 'center',\r\n})\r\n\r\nexport const ProductImage = styled('div', {\r\n    width: '100%',\r\n    display: 'flex',\r\n    justifyContent: 'center',\r\n    img: {\r\n        objectFit: 'cover',\r\n    },\r\n})\r\n\r\nexport const ProductInfo = styled('div', {\r\n    display: 'flex',\r\n    flexDirection: 'column',\r\n})"
+        }
+    ]
+}

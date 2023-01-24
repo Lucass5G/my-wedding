@@ -1,0 +1,158 @@
+{
+    "sourceFile": "src/pages/success/styles.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 35,
+            "patches": [
+                {
+                    "date": 1674518050616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674518075502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n     flexDirection: 'column',\r\n     alignItems: 'center',\r\n     justifyContent: 'center',\r\n     background: '$green900' ,\r\n+    width: '100%',\r\n+    height: '100%'\r\n })\r\n \r\n \r\n export const ImageContainer =  styled('div', {\r\n"
+                },
+                {
+                    "date": 1674518085183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     alignItems: 'center',\r\n     justifyContent: 'center',\r\n     background: '$green900' ,\r\n     width: '100%',\r\n-    height: '100%'\r\n+    height: '100vh'\r\n })\r\n \r\n \r\n export const ImageContainer =  styled('div', {\r\n"
+                },
+                {
+                    "date": 1674518157427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,14 @@\n     alignItems: 'center',\r\n     justifyContent: 'center',\r\n     background: '$green900' ,\r\n     width: '100%',\r\n-    height: '100vh'\r\n+    height: '100vh',\r\n+\r\n+    'h1, p': {\r\n+        color: '#ffffff',\r\n+        fontWeight: 'bold'\r\n+    }\r\n })\r\n \r\n \r\n export const ImageContainer =  styled('div', {\r\n"
+                },
+                {
+                    "date": 1674518164707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     background: '$green900' ,\r\n     width: '100%',\r\n     height: '100vh',\r\n \r\n-    'h1, p': {\r\n+    'h1, p, strong': {\r\n         color: '#ffffff',\r\n         fontWeight: 'bold'\r\n     }\r\n })\r\n"
+                },
+                {
+                    "date": 1674518209277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     height: '100vh',\r\n \r\n     'h1, p, strong': {\r\n         color: '#ffffff',\r\n-        fontWeight: 'bold'\r\n+        fontWeight: '700'\r\n     }\r\n })\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1674518216123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     width: '100%',\r\n     height: '100vh',\r\n \r\n     'h1, p, strong': {\r\n-        color: '#ffffff',\r\n+        color: '#fff',\r\n         fontWeight: '700'\r\n     }\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674518242575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,12 @@\n \r\n     'h1, p, strong': {\r\n         color: '#fff',\r\n         fontWeight: '700'\r\n+    },\r\n+\r\n+    'p': {\r\n+        fontSize:'$md'\r\n     }\r\n })\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1674518261552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n         color: '#fff',\r\n         fontWeight: '700'\r\n     },\r\n \r\n-    'p': {\r\n-        fontSize:'$md'\r\n+    'p, strong': {\r\n+        fontSize:'$lg'\r\n     }\r\n })\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1674518272269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     width: '100%',\r\n     height: '100vh',\r\n \r\n     'h1, p, strong': {\r\n-        color: '#fff',\r\n+        color: '#f5f5f5',\r\n         fontWeight: '700'\r\n     },\r\n \r\n     'p, strong': {\r\n"
+                },
+                {
+                    "date": 1674518282948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n     height: '100vh',\r\n \r\n     'h1, p, strong': {\r\n         color: '#f5f5f5',\r\n-        fontWeight: '700'\r\n+        fontWeight: '700',\r\n+        fontFamily: 'Cinzeel'\r\n     },\r\n \r\n     'p, strong': {\r\n         fontSize:'$lg'\r\n"
+                },
+                {
+                    "date": 1674518289764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \r\n     'h1, p, strong': {\r\n         color: '#f5f5f5',\r\n         fontWeight: '700',\r\n-        fontFamily: 'Cinzeel'\r\n+        fontFamily: 'sans-serif'\r\n     },\r\n \r\n     'p, strong': {\r\n         fontSize:'$lg'\r\n"
+                },
+                {
+                    "date": 1674518305396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     background: '$green900' ,\r\n     width: '100%',\r\n     height: '100vh',\r\n \r\n-    'h1, p, strong': {\r\n+    'h1, p, strong, a': {\r\n         color: '#f5f5f5',\r\n         fontWeight: '700',\r\n         fontFamily: 'sans-serif'\r\n     },\r\n"
+                },
+                {
+                    "date": 1674518324035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,20 @@\n     },\r\n \r\n     'p, strong': {\r\n         fontSize:'$lg'\r\n+    },\r\n+\r\n+    a: {\r\n+        marginTop: '5rem',\r\n+        display: 'block',\r\n+        fontSize: '$lg',\r\n+        color: '$green500',\r\n+        textDecoration: 'none',\r\n+\r\n+        '&:hover': {\r\n+            color: '$green300'\r\n+        }\r\n     }\r\n })\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1674518333953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         color: '$green500',\r\n         textDecoration: 'none',\r\n \r\n         '&:hover': {\r\n-            color: '$green300'\r\n+            color: '$green500'\r\n         }\r\n     }\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674518361017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,13 +22,13 @@\n     a: {\r\n         marginTop: '5rem',\r\n         display: 'block',\r\n         fontSize: '$lg',\r\n-        color: '$green500',\r\n+        color: '#fefefe',\r\n         textDecoration: 'none',\r\n \r\n         '&:hover': {\r\n-            color: '$green500'\r\n+            \r\n         }\r\n     }\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674518386071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         color: '#fefefe',\r\n         textDecoration: 'none',\r\n \r\n         '&:hover': {\r\n-            \r\n+            border: '1px solid black',\r\n         }\r\n     }\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674518397347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n         textDecoration: 'none',\r\n \r\n         '&:hover': {\r\n             border: '1px solid black',\r\n+            padding: '1rem'\r\n         }\r\n     }\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674518415411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n         textDecoration: 'none',\r\n \r\n         '&:hover': {\r\n             border: '1px solid black',\r\n+            borderRadius: '3px',\r\n             padding: '1rem'\r\n         }\r\n     }\r\n })\r\n"
+                },
+                {
+                    "date": 1674518436620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n     height: '100vh',\r\n \r\n     'h1, p, strong, a': {\r\n         color: '#f5f5f5',\r\n-        fontWeight: '700',\r\n         fontFamily: 'sans-serif'\r\n     },\r\n \r\n     'p, strong': {\r\n"
+                },
+                {
+                    "date": 1674518456568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,12 @@\n     'p, strong': {\r\n         fontSize:'$lg'\r\n     },\r\n \r\n+    p: {\r\n+        color: '$green900'\r\n+    },\r\n+\r\n     a: {\r\n         marginTop: '5rem',\r\n         display: 'block',\r\n         fontSize: '$lg',\r\n"
+                },
+                {
+                    "date": 1674518466326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     display: 'flex',\r\n     flexDirection: 'column',\r\n     alignItems: 'center',\r\n     justifyContent: 'center',\r\n-    background: '$green900' ,\r\n+    background: '$green400' ,\r\n     width: '100%',\r\n     height: '100vh',\r\n \r\n     'h1, p, strong, a': {\r\n"
+                },
+                {
+                    "date": 1674518474465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         fontSize:'$lg'\r\n     },\r\n \r\n     p: {\r\n-        color: '$green900'\r\n+        color: '#000000'\r\n     },\r\n \r\n     a: {\r\n         marginTop: '5rem',\r\n"
+                },
+                {
+                    "date": 1674518487131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,18 +9,18 @@\n     width: '100%',\r\n     height: '100vh',\r\n \r\n     'h1, p, strong, a': {\r\n-        color: '#f5f5f5',\r\n+        color: '#000000',\r\n         fontFamily: 'sans-serif'\r\n     },\r\n \r\n     'p, strong': {\r\n         fontSize:'$lg'\r\n     },\r\n \r\n     p: {\r\n-        color: '#000000'\r\n+        color: '#'\r\n     },\r\n \r\n     a: {\r\n         marginTop: '5rem',\r\n"
+                },
+                {
+                    "date": 1674518496345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     display: 'flex',\r\n     flexDirection: 'column',\r\n     alignItems: 'center',\r\n     justifyContent: 'center',\r\n-    background: '$green400' ,\r\n+    background: '$green100' ,\r\n     width: '100%',\r\n     height: '100vh',\r\n \r\n     'h1, p, strong, a': {\r\n"
+                },
+                {
+                    "date": 1674518507036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,8 @@\n     a: {\r\n         marginTop: '5rem',\r\n         display: 'block',\r\n         fontSize: '$lg',\r\n-        color: '#fefefe',\r\n         textDecoration: 'none',\r\n \r\n         '&:hover': {\r\n             border: '1px solid black',\r\n"
+                },
+                {
+                    "date": 1674518515461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,12 +26,11 @@\n         marginTop: '5rem',\r\n         display: 'block',\r\n         fontSize: '$lg',\r\n         textDecoration: 'none',\r\n-\r\n+        border: '1px solid black',\r\n+        borderRadius: '3px',\r\n         '&:hover': {\r\n-            border: '1px solid black',\r\n-            borderRadius: '3px',\r\n             padding: '1rem'\r\n         }\r\n     }\r\n })\r\n"
+                },
+                {
+                    "date": 1674518525745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,12 @@\n         fontSize: '$lg',\r\n         textDecoration: 'none',\r\n         border: '1px solid black',\r\n         borderRadius: '3px',\r\n+        padding: '1rem',\r\n+        \r\n         '&:hover': {\r\n-            padding: '1rem'\r\n+            \r\n         }\r\n     }\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674518554642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,12 @@\n         textDecoration: 'none',\r\n         border: '1px solid black',\r\n         borderRadius: '3px',\r\n         padding: '1rem',\r\n-        \r\n+\r\n         '&:hover': {\r\n-            \r\n+            backgroundColor: '#000000',\r\n+            color: '#ffffff'\r\n         }\r\n     }\r\n })\r\n \r\n"
+                },
+                {
+                    "date": 1674518562692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         marginTop: '5rem',\r\n         display: 'block',\r\n         fontSize: '$lg',\r\n         textDecoration: 'none',\r\n-        border: '1px solid black',\r\n+        border: '2px solid black',\r\n         borderRadius: '3px',\r\n         padding: '1rem',\r\n \r\n         '&:hover': {\r\n"
+                },
+                {
+                    "date": 1674518595282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,13 @@\n         fontSize:'$lg'\r\n     },\r\n \r\n     p: {\r\n-        color: '#'\r\n+        fontSize: '$xl',\r\n+        color: '$gray300',\r\n+        maxWidth: 560,\r\n+        textAlign: 'center',\r\n+        marginTop: '2rem',\r\n     },\r\n \r\n     a: {\r\n         marginTop: '5rem',\r\n"
+                },
+                {
+                    "date": 1674518603096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n     background: '$green100' ,\r\n     width: '100%',\r\n     height: '100vh',\r\n \r\n-    'h1, p, strong, a': {\r\n-        color: '#000000',\r\n-        fontFamily: 'sans-serif'\r\n+    h1: {\r\n+        fontSize: '$2xl',\r\n+        color: '$gray100'\r\n     },\r\n \r\n     'p, strong': {\r\n         fontSize:'$lg'\r\n"
+                },
+                {
+                    "date": 1674518616064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,13 @@\n     background: '$green100' ,\r\n     width: '100%',\r\n     height: '100vh',\r\n \r\n+    'h1, p, strong, a': {\r\n+        color: '#000000',\r\n+        fontFamily: 'sans-serif'\r\n+    },\r\n+\r\n     h1: {\r\n         fontSize: '$2xl',\r\n         color: '$gray100'\r\n     },\r\n"
+                },
+                {
+                    "date": 1674518632085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     },\r\n \r\n     h1: {\r\n         fontSize: '$2xl',\r\n-        color: '$gray100'\r\n     },\r\n \r\n     'p, strong': {\r\n         fontSize:'$lg'\r\n@@ -48,6 +47,20 @@\n })\r\n \r\n \r\n export const ImageContainer =  styled('div', {\r\n-    \r\n+    width: '100%',\r\n+    maxWidth: 130,\r\n+    height: 145,\r\n+    background: 'linear-gradient(180deg, #1ea383 0%, #7465d4 100%)',\r\n+    borderRadius: 8,\r\n+    padding: '0.25rem',\r\n+    marginTop: '4rem',\r\n+\r\n+    display: 'flex',\r\n+    alignItems: 'center',\r\n+    justifyContent: 'center',\r\n+\r\n+    img: {\r\n+        objectFit: 'cover'\r\n+    }\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1674518638557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n \r\n \r\n export const ImageContainer =  styled('div', {\r\n     width: '100%',\r\n-    maxWidth: 130,\r\n+    maxWidth: 300,\r\n     height: 145,\r\n     background: 'linear-gradient(180deg, #1ea383 0%, #7465d4 100%)',\r\n     borderRadius: 8,\r\n     padding: '0.25rem',\r\n"
+                },
+                {
+                    "date": 1674518655451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,10 +48,10 @@\n \r\n \r\n export const ImageContainer =  styled('div', {\r\n     width: '100%',\r\n-    maxWidth: 300,\r\n-    height: 145,\r\n+    maxWidth: 200,\r\n+    height: 200,\r\n     background: 'linear-gradient(180deg, #1ea383 0%, #7465d4 100%)',\r\n     borderRadius: 8,\r\n     padding: '0.25rem',\r\n     marginTop: '4rem',\r\n"
+                }
+            ],
+            "date": 1674518050616,
+            "name": "Commit-0",
+            "content": "import { styled } from \"../../styles\";\r\n\r\nexport const SucessContainer = styled(\"main\", {\r\n    display: 'flex',\r\n    flexDirection: 'column',\r\n    alignItems: 'center',\r\n    justifyContent: 'center',\r\n    background: '$green900' ,\r\n})\r\n\r\n\r\nexport const ImageContainer =  styled('div', {\r\n    \r\n})"
+        }
+    ]
+}

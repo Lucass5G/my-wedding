@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/pages/api/checkout.api.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1674514516116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674514532129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,6 @@\n             }\r\n         ]\r\n     })\r\n \r\n-    return res.status(201).json({ id: checkoutSession.id }\r\n+    return res.status(201).json({ id: checkoutSession.id })\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1674514916927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n \r\n export default async function handler(req: NextApiRequest, res: NextApiResponse) {\r\n     const { priceId } = req.body\r\n \r\n+    console.log('CHECKOUT', req.body)\r\n+\r\n     if (req.method !== 'POST') {\r\n         res.setHeader('Allow', 'POST')\r\n         res.status(405).end('Method not allowed')\r\n     }\r\n"
+                },
+                {
+                    "date": 1674515285294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n export default async function handler(req: NextApiRequest, res: NextApiResponse) {\r\n     const { priceId } = req.body\r\n \r\n-    console.log('CHECKOUT', req.body)\r\n+    console.log('CHECKOUT', req.body.priceId)\r\n \r\n     if (req.method !== 'POST') {\r\n         res.setHeader('Allow', 'POST')\r\n         res.status(405).end('Method not allowed')\r\n"
+                },
+                {
+                    "date": 1674516858824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,11 @@\n                 quantity: 1\r\n             }\r\n         ]\r\n     })\r\n+    \r\n+    console.log(\"*******************\")\r\n+    console.log(\"CHECKOUT SESSION\", checkoutSession)\r\n+    console.log(\"*******************\")\r\n \r\n     return res.status(201).json({ id: checkoutSession.id })\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1674517011670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,6 +33,6 @@\n     console.log(\"*******************\")\r\n     console.log(\"CHECKOUT SESSION\", checkoutSession)\r\n     console.log(\"*******************\")\r\n \r\n-    return res.status(201).json({ id: checkoutSession.id })\r\n+    return res.status(201).json({ checkoutURL: checkoutSession.url})\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1674514516116,
+            "name": "Commit-0",
+            "content": "import { NextApiRequest, NextApiResponse } from \"next\";\r\nimport { stripe } from \"../../lib/stripe\";\r\n\r\nexport default async function handler(req: NextApiRequest, res: NextApiResponse) {\r\n    const { priceId } = req.body\r\n\r\n    if (req.method !== 'POST') {\r\n        res.setHeader('Allow', 'POST')\r\n        res.status(405).end('Method not allowed')\r\n    }\r\n\r\n    if (!priceId) {\r\n        res.status(400).end('Price ID is required')\r\n    }\r\n\r\n    const successURL = `${process.env.NEXT_URL}/success?session_id={CHECKOUT_SESSION_ID}`;\r\n    const cancelURL = `${process.env.NEXT_URL}/`\r\n\r\n    const checkoutSession = await stripe.checkout.sessions.create({\r\n        success_url: successURL,\r\n        cancel_url: cancelURL,\r\n        mode: 'payment',\r\n        line_items: [\r\n            {\r\n                price: priceId,\r\n                quantity: 1\r\n            }\r\n        ]\r\n    })\r\n\r\n    return res.status(201).json({ id: checkoutSession.id }\r\n}"
+        }
+    ]
+}

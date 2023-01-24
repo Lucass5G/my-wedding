@@ -25,19 +25,33 @@ import {
     LabelConfirmAttendance,
     ConfirmAttendanceTitle,
     ConfirmAttendanceButton, TipsContent, Header,
-} from '../styles/pages/app'
+} from '../styles/page/app'
 
 import Image from 'next/image'
-import {faker} from '@faker-js/faker/locale/pt_BR'
+import { faker } from '@faker-js/faker/locale/pt_BR'
 import CountdownTimer from './components/Counter'
 
-const Map = dynamic(() => import('./components/Maps'), {
-    ssr: false,
-})
+import Product from './product/product.page'
+import { stripe } from '../lib/stripe'
+import Stripe from 'stripe'
+
+
 
 const image = faker.image.nightlife()
 const bigText = 'Repellat accusamus beatae sapiente sint aperiam. At magnam temporibus eos aut incidunt. Explicabo quam labore tempore beatae sapiente maiores. Expedita optio temporibus dolore ratione magni perferendis qui. Accusamus eius maxime beatae tenetur eius. Animi dolore accusantium ad. Sapiente animi vel. Veritatis error est laborum dolorum. Tempora voluptatem cupiditate quam expedita omnis quam temporibus. Corporis exercitationem reiciendis minima quam nihil. Molestias iure ipsam necessitatibus inventore minus. Ducimus earum harum id voluptate. Hic ratione odio assumenda sint alias repellat a. Labore commodi itaque. Beatae perferendis nam libero eum beatae. Dolorem voluptatibus molestias sunt laborum voluptatum nihil tempore doloremque.'
-export default function Home () {
+
+interface ProductProps {
+    products: {
+        id: string
+        description: string;
+        name: string;
+        imageURL: string;
+        price: string
+        priceId: string
+    }[]
+}
+
+export default function Home({ products }: ProductProps) {
 
     return (
         <Container>
@@ -54,7 +68,7 @@ export default function Home () {
                     src={image}
                     height={400}
                     width={2000}
-                    style={{objectFit: 'cover', width: '100%'}}
+                    style={{ objectFit: 'cover', width: '100%' }}
                     alt={''}
                     quality={100}
                     priority
@@ -71,7 +85,7 @@ export default function Home () {
                         <DefaultTitle>A noiva</DefaultTitle>
                         <p>Ana cleide</p>
                     </Bride>
-                    <Image src={image} alt={''} width={300} height={300}/>
+                    <Image priority src={image} alt={''} width={300} height={300} />
                     <Groom>
                         <DefaultTitle>O noivo</DefaultTitle>
                         <p>Lucas Luan</p>
@@ -93,13 +107,13 @@ export default function Home () {
                 <ConfirmAttendanceTitle>Confirme sua presença</ConfirmAttendanceTitle>
 
                 <LabelConfirmAttendance>Seu nome completo:</LabelConfirmAttendance>
-                <ConfirmAttendanceInput type="text"/>
+                <ConfirmAttendanceInput type="text" />
 
                 <CheckBoxesConfirm>
-                    <input type="checkbox"/>
+                    <input type="checkbox" />
                     <p>Confirme apenas a minha presença</p>
-                    <div style={{margin: '0.5rem'}}></div>
-                    <input type="checkbox"/>
+                    <div style={{ margin: '0.5rem' }}></div>
+                    <input type="checkbox" />
                     <p>Confirme a presença de todos a quem o convite foi destinado</p>
                 </CheckBoxesConfirm>
 
@@ -107,7 +121,7 @@ export default function Home () {
                 <ConfirmAttendanceButton>CONFIRMAR PRESENÇA</ConfirmAttendanceButton>
             </ConfirmAttendanceContent>
 
-            <CountdownTimer targetDate={new Date('2023-10-28 15:00:00')}/>
+            <CountdownTimer targetDate={new Date('2023-10-28 15:00:00')} />
 
             <Text>Próximos eventos</Text>
             <NextEventContent id="nextevent">
@@ -121,7 +135,10 @@ export default function Home () {
                     <p>15:00</p>
                 </InformationEvent>
                 <MapOfEvent>
-                    <Map/>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10595.518927284726!2d-47.91009065039261!3d-15.79434745364092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3a8d1adcfa01%3A0x28135d84739659de!2sParque%20da%20Cidade%20Sarah%20Kubitschek!5e0!3m2!1spt-BR!2sbr!4v1673800809201!5m2!1spt-BR!2sbr"
+                        width="600" height="450" allowFullScreen loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </MapOfEvent>
             </NextEventContent>
 
@@ -138,11 +155,58 @@ export default function Home () {
                 </ul>
             </TipsContent>
             <div>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10595.518927284726!2d-47.91009065039261!3d-15.79434745364092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3a8d1adcfa01%3A0x28135d84739659de!2sParque%20da%20Cidade%20Sarah%20Kubitschek!5e0!3m2!1spt-BR!2sbr!4v1673800809201!5m2!1spt-BR!2sbr"
-                    width="600" height="450" allowFullScreen loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"></iframe>
+                <Product products={products} />
             </div>
         </Container>
     )
+}
+
+export async function getServerSideProps() {
+    try {
+        const response = await stripe.products.list({
+            expand: ['data.default_price'],
+        })
+        if (!response) {
+            console.log('Response deu ruim', {
+                cause: response,
+            })
+        }
+
+        // console.log('***************************')
+        // console.log(response)
+        // console.log('***************************')
+
+        const formatAmount = (amount: number | null) => {
+            if (!amount) return
+            return new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            }).format(amount / 100)
+        }
+        const products = response.data.map(product => {
+            const price = product.default_price as Stripe.Price
+            console.log('PRICE', price)
+            return {
+                id: product.id,
+                name: product.name,
+                description: product.description,
+                imageURL: product.images[0],
+                price: formatAmount(price.unit_amount),
+                priceId: price.id
+            }
+        })
+
+
+        return {
+            props: { products },
+
+        }
+    } catch (error) {
+        console.error('Deu ruim', {
+            cause: error,
+        })
+        return {
+            props: {}
+        }
+    }
 }

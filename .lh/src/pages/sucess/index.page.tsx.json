@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/pages/sucess/index.page.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1674517496058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674517843345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,21 @@\n+import { GetServerSideProps } from \"next\"\r\n import Head from \"next/head\"\r\n import Image from \"next/image\"\r\n import Link from \"next/link\"\r\n+import Stripe from \"stripe\"\r\n+import { stripe } from \"../../lib/stripe\"\r\n import { ImageContainer, SucessContainer } from \"./styles\"\r\n \r\n interface SuccessProps {\r\n-    customName: string\r\n+    customerName: string\r\n     product: {\r\n         name: string\r\n         imageURL: string\r\n     }\r\n }\r\n \r\n-export default function Success({ customName, product }: SuccessProps) {\r\n+export default function Success({ customerName, product }: SuccessProps) {\r\n     return (\r\n         <>\r\n             <Head>\r\n                 <title>Contribuição efetuada</title>\r\n@@ -22,14 +25,44 @@\n                 <h1>Contribuição efetuada</h1>\r\n                 <ImageContainer>\r\n                     <Image src={product.imageURL} alt='' width={200} height={200} />\r\n                 </ImageContainer>\r\n-                <p>Uhuuul <strong>{customName}</strong></p>,\r\n+                <p>Uhuuul <strong>{customerName}</strong></p>,\r\n                 sua contribuição comprando <strong>{product.name}</strong> foi um sucesso e nos ajudará muuuito, valeu!\r\n \r\n                 <Link href='/'>\r\n                     Voltar para a página inicial\r\n                 </Link>\r\n             </SucessContainer>\r\n         </>\r\n     )\r\n+}\r\n+\r\n+export const getServerSideProps:GetServerSideProps = async ({query}) => {\r\n+    const { session_id} = query\r\n+\r\n+    if(!session_id) {\r\n+        return {\r\n+            redirect: {\r\n+                destination: '/',\r\n+                permanent: false\r\n+            }\r\n+        }\r\n+    }\r\n+\r\n+    const session = await stripe.checkout.sessions.retrieve(session_id as string, {\r\n+        expand: ['line_items', 'line_items.data.price.product']\r\n+    })\r\n+\r\n+    const customerName =  session.customer_details?.name || 'Anônimo'\r\n+    const product =  session.line_items?.data[0]?.price?.product as Stripe.Product\r\n+\r\n+    return{\r\n+        props: {\r\n+            customerName: customerName,\r\n+            product: {\r\n+                name: product.name,\r\n+                imageURL: product.images[0]\r\n+            }\r\n+        }\r\n+    }\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1674517496058,
+            "name": "Commit-0",
+            "content": "import Head from \"next/head\"\r\nimport Image from \"next/image\"\r\nimport Link from \"next/link\"\r\nimport { ImageContainer, SucessContainer } from \"./styles\"\r\n\r\ninterface SuccessProps {\r\n    customName: string\r\n    product: {\r\n        name: string\r\n        imageURL: string\r\n    }\r\n}\r\n\r\nexport default function Success({ customName, product }: SuccessProps) {\r\n    return (\r\n        <>\r\n            <Head>\r\n                <title>Contribuição efetuada</title>\r\n                <meta name=\"robots\" content=\"noindex\" />\r\n            </Head>\r\n            <SucessContainer>\r\n                <h1>Contribuição efetuada</h1>\r\n                <ImageContainer>\r\n                    <Image src={product.imageURL} alt='' width={200} height={200} />\r\n                </ImageContainer>\r\n                <p>Uhuuul <strong>{customName}</strong></p>,\r\n                sua contribuição comprando <strong>{product.name}</strong> foi um sucesso e nos ajudará muuuito, valeu!\r\n\r\n                <Link href='/'>\r\n                    Voltar para a página inicial\r\n                </Link>\r\n            </SucessContainer>\r\n        </>\r\n    )\r\n}"
+        }
+    ]
+}
